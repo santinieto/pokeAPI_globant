@@ -5,7 +5,7 @@ import json
 
 POKEAPE__MAIN_URL = 'https://pokeapi.co/api/v2/berry/'
 
-def get_berries_number():
+def get_berries_number(verbose = False):
     """Cuento cuantas berries hay"""
 
     # Pido la respuesta de la API externa
@@ -17,13 +17,15 @@ def get_berries_number():
             payload     = response.json()
             nberries    = payload.get( 'count', [] )
             
-            print('There is {} berries in the dataset'.format( nberries ))
-    except:
-        print('ERROR! Something went wrong while loading data')
+            if verbose == True:
+                print('There are {} berries in the dataset'.format( nberries ))
+    except:        
+        if verbose == True:
+            print('ERROR! Something went wrong while loading data')
 
     return nberries
 
-def get_berries_data(nberries, verbose = True):
+def get_berries_data(nberries, verbose = False):
     """Obtengo los nombres y datos de cada berry"""
 
     # Obtengo los datos de las berries
@@ -63,19 +65,20 @@ def get_json_data(nberries, berri_names, berri_grow_times):
 
     return json_object
 
-def plot_berries_hist(berry_grow_times, show = False):
+def plot_berries_hist(berry_grow_times, show = False, savefig = True):
     """Hago un histograma para mostrar los datos""" 
 
     # Genero el grafico
     pl.figure()
     pl.hist(berry_grow_times)
     pl.grid()
-    pl.xlabel('Berri Grow Time')
+    pl.xlabel('Berry Grow Time')
     pl.ylabel('Ocurrences')
     pl.title("Berries's Grow Times Histogram")
    
     # Guardo la figura
-    pl.savefig("./pokeAPI/static/img/berries_hist.png", dpi = 100)
+    if savefig == True:
+        pl.savefig("./pokeAPI/static/img/berries_hist.png", dpi = 100)
 
     # Cierro la figura
     if show is True:
@@ -83,6 +86,6 @@ def plot_berries_hist(berry_grow_times, show = False):
     pl.close()
 
 if __name__ == '__main__':
-    nberries = get_berries_number()
-    berry_names, berry_grow_times = get_berries_data(nberries)
-    plot_berries_hist(berry_grow_times, show = True)
+    nberries = get_berries_number(verbose = True)
+    berry_names, berry_grow_times = get_berries_data(nberries, verbose = True)
+    plot_berries_hist(berry_grow_times, show = True, savefig = False)
