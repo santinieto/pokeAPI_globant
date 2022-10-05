@@ -1,5 +1,7 @@
 {% extends 'layout.html' %}
 
+{% load static %}
+
 {% block title %}
     {% if title %}
         {{title}}
@@ -9,5 +11,66 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Página para mostrar las estadísticas de las berries</h1>
+
+    <br>
+    
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 100rem;">
+            <div class="card-body">
+    
+                <div class="card" style="width: auto;">
+                    <div class="card-header">
+                        Hay {{nberries}} berries para listar
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-light">
+                            {% for berry_name in berry_names %}            
+                                <li class="list-group-item">{{forloop.counter}}. {{berry_name}}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <br>
+    
+                <div class="card" style="width: auto;">
+                    <div class="card-header">
+                        Estadísticas de crecimiento
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-light">
+                            {% for key, value in berries_dicc.items %}        
+                                {% if key == 'min_growth_time' %}    
+                                    <li class="list-group-item">{{forloop.counter}}. Mínimo: {{value}}</li>
+                                {% elif key == 'median_growth_time' %}
+                                    <li class="list-group-item">{{forloop.counter}}. Mediana: {{value}}</li>
+                                {% elif key == 'variance_growth_time' %}
+                                    <li class="list-group-item">{{forloop.counter}}. Varianza: {{value}}</li>
+                                {% elif key == 'mean_growth_time' %}
+                                    <li class="list-group-item">{{forloop.counter}}. Media: {{value}}</li>
+                                {% elif key == 'frequency_growth_time' %}
+                                    <li class="list-group-item">{{forloop.counter}}. Frecuencias: {{value}}</li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <br>
+    
+                <div class="card" style="width: auto;">
+                    <div class="card-header">
+                        Berries histogram
+                    </div>
+                    <div class="card-body">
+                        <div class="text-center">
+                            <img src="{% static 'img/berries_hist.png' %}" class="rounded">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
