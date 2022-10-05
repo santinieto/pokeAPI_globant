@@ -22,4 +22,5 @@ urlpatterns = [
     path("index/",              views.index,            name="index"),
     path("inicio/",             views.index,            name="inicio"),
     path("all-berry-stats/",    views.allBerryStats,    name="all_berry_stats"),
+    path("contact/",            views.contact,          name="contact"),
 ]

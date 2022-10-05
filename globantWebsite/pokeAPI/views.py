@@ -48,3 +48,8 @@ def allBerryStats(request):
         'berry_grow_times' : berry_grow_times,
         'berries_dicc' : berries_dicc,
     })
+
+def contact(request):
+    return render(request, 'contact.html', {
+        'title' : 'Página de contacto',
+    })

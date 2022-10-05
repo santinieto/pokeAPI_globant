@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{% if title %}
+    {{title}}
+{% else %}
+    Página sin título
+{% endif %}
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+
+    
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 100rem;">
+            <div class="card-body">
+
+                <div class="card" style="width: auto;">
+                    <div class="card-header">
+                    Links de contacto
+                    </div>
+                    <div class="card-body">
+                        <div class="col align-self-start">
+                        <ul class="list-group list-group-light">       
+                            <li class="list-group-item">Email: santi.nieto@live.com</li>
+                            <li class="list-group-item">Telephone: +54 9 351 2647957</li>
+                            <li class="list-group-item">Social networks:
+                                <a href="https://www.linkedin.com/in/santiago-nieto-29b43a10a/" class="btn btn-primary">LinkedIn</a>
+                                <a href="https://www.instagram.com/_santinieto/" class="btn btn-primary">Instagram</a>
+                            </li>
+                        </ul>                            
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+    
