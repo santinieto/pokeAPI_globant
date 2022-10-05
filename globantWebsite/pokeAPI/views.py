@@ -17,7 +17,7 @@ def index(request):
 def allBerryStats(request):
 
     # Obtengo los datos de las berries
-    nberries = 5 # get_berries_number()
+    nberries = get_berries_number()
     berry_names, berry_grow_times = get_berries_data(nberries)
 
     # Convierto los valores de crecimiento en un arreglo de numpy
