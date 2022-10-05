@@ -1,6 +1,7 @@
 import requests
 import numpy as np
 import pylab as pl
+import json
 
 POKEAPE__MAIN_URL = 'https://pokeapi.co/api/v2/berry/'
 
@@ -47,6 +48,20 @@ def get_berries_data(nberries, verbose = True):
         print('ERROR! Something went wrong while loading data')
 
     return berry_names, berry_grow_times
+
+def get_json_data(nberries, berri_names, berri_grow_times):    
+    # Armo el diccionrio JSON
+    json_data = {}
+    for k in range(nberries+1):
+        json_data[k] = {
+            'name' : berri_names[k-1],
+            'grow_time' : int(berri_grow_times[k-1]),
+        }
+
+    json_object = json.dumps(json_data, indent = 4) 
+    #print(json_object)
+
+    return json_object
 
 def plot_berries_hist(berry_grow_times, show = False):
     """Hago un histograma para mostrar los datos""" 

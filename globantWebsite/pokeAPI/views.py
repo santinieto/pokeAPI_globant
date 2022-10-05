@@ -37,6 +37,9 @@ def allBerryStats(request):
         "frequency_growth_time": str( frequency )
     }
 
+    # Genero el diccionario JSON
+    json_object = get_json_data(nberries, berry_names, berry_grow_times)
+
     # Genero el grafico
     plot_berries_hist(berry_grow_times)
 
@@ -47,6 +50,7 @@ def allBerryStats(request):
         'berry_names' : berry_names,
         'berry_grow_times' : berry_grow_times,
         'berries_dicc' : berries_dicc,
+        'json_object' : json_object,
     })
 
 def contact(request):
