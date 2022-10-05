@@ -57,7 +57,7 @@ def plot_berries_hist(berry_grow_times, show = False):
     pl.grid()
     pl.xlabel('Berri Grow Time')
     pl.ylabel('Ocurrences')
-    pl.title("Berri's Grow Times Histogram")
+    pl.title("Berries's Grow Times Histogram")
    
     # Guardo la figura
     pl.savefig("./pokeAPI/static/img/berries_hist.png", dpi = 100)
