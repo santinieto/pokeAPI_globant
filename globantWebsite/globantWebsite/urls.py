@@ -19,6 +19,7 @@ from pokeAPI import views
 
 urlpatterns = [
     path("admin/",              admin.site.urls),
+    path("",                    views.index,            name=""),
     path("index/",              views.index,            name="index"),
     path("inicio/",             views.index,            name="inicio"),
     path("all-berry-stats/",    views.allBerryStats,    name="all_berry_stats"),

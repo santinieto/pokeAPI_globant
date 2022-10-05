@@ -1,16 +1,69 @@
-This project is made using:
-    - Python
-    - Django
-    - pokeAPI
-    - Bootstrap 5
+INTRODUCTION
 
-There are two main forlders:
-    - globantWebsite: In this folder the main project is located. Inside we have both main server files and pokeAPI application for this particular project
-    - ipython_test: In this folder i put the Jupyter notebok that i use to test the data colletions from pokeAPI
+* The idea of this project is to create a Pokeberries statistics API. The system is feed using an external api named pokeAPI. In the link below you can find the documentetion about the API. What we will use from the external API is the berries information.
 
-How to run and use the the server:
-    - You will need to open a command promt that has Python (in my case i used Python3) and move it inside globantWebsite project's folder
-    - Then you can run the command:
-        $ python manage.py runserver
-      The command promt will be busy from this moment showing the IP that you will have to connect to see the website
-    - The main main is page is <localhost>/index so you will have a navigation bar that you can use to move to the HTML code to see the berrie's statistics (it can take about 30 seconds to load the data)
+* pokeAPI link: https://pokeapi.co/docs/v2#berries
+
+* This project was made using:
+    1. Python
+    2. Django
+    3. An external api named pokeAPI
+    4. Bootstrap 5
+
+* This project is intented to evaluate the skills of an applicant for a job position of Python Developer.
+
+
+* What are berries? ---> Berries are small fruits that can provide HP and status condition restoration, stat enhancement, and even damage negation when eaten by Pokémon.
+
+* We will collect the berries information and measure some statistics like mean, median, variance, etc.
+
+FOLDER STRUCTURE
+
+* There are two main forlders:
+    1. globantWebsite: In this folder the main project is located. Inside we have both main server files and pokeAPI application for this particular project
+    2. ipython_test: In this folder i put the Jupyter notebok that i use to test the data colletions from pokeAPI
+
+Inside 1) we have both the server's files and the App files.
+
+HOW TO RUN AND USE THE APPLICATION
+
+1. First at all, you will need to have the last version of the 'master' branch from the free GitHub repository 'pokeAPI_globant'. You can clone using the command:
+
+$ git clone https://github.com/santinieto/pokeAPI_globant.git
+
+NOTE: You can switch the branch repository from anyone to master using $ git checkout master 
+
+2. The next thing that you will need is a command prompt with both Python and Django installed (for this project i used the Python persion python3). After cloning the repository you will need to move inside the project folder:
+
+$ cd pokeAPI_globant/globantWebsite
+
+3. Next, to start the server you will have to run the command
+
+$ python manage.py runserver
+
+If everything is alright you will have now a busy command prompt with the messages:
+
+- Watching for file changes with StatReloader
+- Performing system checks...
+- 
+- System check identified no issues (0 silenced).
+- October 05, 2022 - 16:13:40
+- Django version 4.1, using settings 'globantWebsite.settings'
+- Starting development server at http://127.0.0.1:8000/
+- Quit the server with CTRL-BREAK.
+
+Take in note that you must connect to the IP 'http://127.0.0.1:8000/' (or the IP that the command promt show for every particular case) to access to the server.
+
+4. You will have a few URLs to connect from the server:
+* '' ---> This is the default HTML template that you will see when connecting to the server
+* 'index' ---> The same as previous case
+* 'inicio' ---> The same as previous case
+* 'all-berry-stats' ---> In this URL you will see the beeries information (take in note that the website takes near to 30 seconds to get the data from the external API)
+* 'contact' ---> You will have the project's owner information links
+
+5. Whenever you desire to stop the server you can go to the command promt and press Ctrl + C to terminate the server
+
+
+
+
+
