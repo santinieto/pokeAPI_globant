@@ -18,7 +18,8 @@ from django.urls import path
 from pokeAPI import views
 
 urlpatterns = [
-    path("admin/",  admin.site.urls),
-    path("index/",  views.index, name="index"),
-    path("inicio/", views.index, name="inicio"),
+    path("admin/",              admin.site.urls),
+    path("index/",              views.index,            name="index"),
+    path("inicio/",             views.index,            name="inicio"),
+    path("all-berry-stats/",    views.allBerryStats,    name="all_berry_stats"),
 ]

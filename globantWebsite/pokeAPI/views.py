@@ -11,3 +11,9 @@ def index(request):
     return render(request, 'index.html', {
         'title' : 'Pagina principal - pokeAPI',
     })
+
+def allBerryStats(request):
+
+    return render(request, 'all_berry_stats.html', {
+        'title' : 'Estadísticas de las berries',
+    })

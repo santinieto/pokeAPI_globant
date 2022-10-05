@@ -7,9 +7,12 @@
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'inicio' %}">Inicio</a>
             </li>
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'all_berry_stats' %}">Estadísticas de las berries</a>
+            </li>
         </ul>
         <div>
-            Fecha ---> {% now "d/m/Y h:m" %}
+            Date: {% now "d/m/Y" %}
         </div>
         </div>
     </div>
