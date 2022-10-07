@@ -41,7 +41,7 @@ The most important files are:
 
 DOWNLOADING THE REPOSITORY
 
-First at all, you will need to have the last version of the 'master' branch from the free GitHub repository 'pokeAPI_globant'. You can clone using the command:
+First at all, you will need to have the last version of the 'master' branch from the free GitHub repository 'pokeAPI_globant'. You can clone it using the command:
 
 $ git clone https://github.com/santinieto/pokeAPI_globant.git
 
@@ -166,6 +166,15 @@ You can install all the required libraries and update the 'requirements' file wi
 $ pip freeze > requirements.txt
 
 NOTE: Don't forget to commit and push your changes if you have permissions, if not ask an administrator
+
+HEROKU
+
+Heroku is a free cloud service to connect your projects to internet. It requires some packages:
+
+* gunicorn
+* psycopg2 
+* dj-database-url
+* python-decouple
 
 
 
