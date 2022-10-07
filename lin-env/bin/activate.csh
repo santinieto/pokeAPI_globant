@@ -9,11 +9,11 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 deactivate nondestructive
 
 setenv VIRTUAL_ENV "/home/santiago/pokeAPI_globant/lin-env"
+setenv POKEAPI_PATH "$VIRTUAL_ENV/../globantWebsite/pokeAPI/pokeAPI_scripts"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"
 
-set POKEAPI_PATH= "$VIRTUAL_ENV/../globantWebsite/pokeAPI/pokeAPI_scripts"
 
 set _OLD_VIRTUAL_PROMPT="$prompt"
 
