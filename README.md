@@ -39,6 +39,13 @@ The most important files are:
 * ./lin-env ---> Folder where the environment for Linux is located
 * ./win-env ---> Folder where the environment for Windows is located
 
+For this project we have 2 environ variables and one environ path:
+* $VIRTUAL_ENV/../globantWebsite/pokeAPI/pokeAPI_scripts
+* USER = "Santiago Nieto"
+* POKEAPI_MAIN_URL = 'https://pokeapi.co/api/v2/berry/'
+
+Note: VIRTUAL_ENV is a environ path created automaticly that has the path where you are located in the project
+
 DOWNLOADING THE REPOSITORY
 
 First at all, you will need to have the last version of the 'master' branch from the free GitHub repository 'pokeAPI_globant'. You can clone using the command:
@@ -149,7 +156,20 @@ With the server turned on, as said before you will have to connect to <localhost
 
 PYTHON SCRIPTS UNITARY TESTING
 
-In the directory ./ipython_test/ you can find the Jupyter notebook that i used to test the main functions to get the data from the external API. To complement the unitary test i included the 'main' function in the script ./pokeAPI_globant/globantWebsite/pokeAPI/pokeAPI_scripts/pokeAPI_scripts.py that is useful to test the code that was finally implemented for this project. You can run the script unitarily with:
+* Test-driven development (TDD): A few unitary tests were created to check the correct behavior of the pokeAPI_scripts. To run them just run:
+
+$ python ./pokeAPI/tests/tdd.py
+
+If everything is OK you will see a message in the command prompt like this one:
+
+$ python ./pokeAPI/tests/tdd.py
+$ ...
+$ ----------------------------------------------------------------------
+$ Ran 3 tests in 6.320s
+$ 
+$ OK
+
+* Tradicional method: In the directory ./ipython_test/ you can find the Jupyter notebook that i used to test the main functions to get the data from the external API. To complement the unitary test i included the 'main' function in the script ./pokeAPI_globant/globantWebsite/pokeAPI/pokeAPI_scripts/pokeAPI_scripts.py that is useful to test the code that was finally implemented for this project. You can run the script unitarily with:
 
 $ python ./pokeAPI_globant/globantWebsite/pokeAPI/pokeAPI_scripts/pokeAPI_scripts.py
 
@@ -166,10 +186,3 @@ You can install all the required libraries and update the 'requirements' file wi
 $ pip freeze > requirements.txt
 
 NOTE: Don't forget to commit and push your changes if you have permissions, if not ask an administrator
-
-
-
-
-
-
-
