@@ -1,4 +1,2 @@
-env/Lib
-env-linux/lib
 globantWebsite/pokeAPI/static/img/berries_hist.png
 *.pyc
