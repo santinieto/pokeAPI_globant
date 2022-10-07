@@ -25,15 +25,17 @@ def get_berries_number(verbose = False):
         if verbose == True:
             print('ERROR! Something went wrong while loading data')
 
+            nberries    = None
+
     return nberries
 
 def get_berries_data(nberries, verbose = False):
     """Obtengo los nombres y datos de cada berry"""
 
     # Obtengo los datos de las berries
-    berry_names      = []
-    berry_grow_times = []
     try:
+        berry_names      = []
+        berry_grow_times = []
         for k in range(nberries+1):
             response = requests.get( os.environ["POKEAPI_MAIN_URL"] + str(k) )
             
@@ -49,6 +51,8 @@ def get_berries_data(nberries, verbose = False):
                 berry_names.append( berry_name )
                 berry_grow_times.append( berry_growth_time )
     except:
+        berry_names      = None
+        berry_grow_times = None
         print('ERROR! Something went wrong while loading data')
 
     return berry_names, berry_grow_times

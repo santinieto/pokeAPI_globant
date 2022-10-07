@@ -1,8 +1,12 @@
 from django.shortcuts import render, HttpResponse
-from .pokeAPI_scripts.pokeAPI_scripts import *
+#from .pokeAPI_scripts.pokeAPI_scripts import *
 import numpy as np
 from dotenv import load_dotenv
 import os
+import sys
+sys.path.append( os.environ['POKEAPI_PATH'] )
+
+from pokeAPI_scripts import *
 
 load_dotenv()
 
