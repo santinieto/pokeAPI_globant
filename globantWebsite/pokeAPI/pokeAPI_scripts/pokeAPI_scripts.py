@@ -2,14 +2,16 @@ import requests
 import numpy as np
 import pylab as pl
 import json
+from dotenv import load_dotenv
+import os
 
-POKEAPE__MAIN_URL = 'https://pokeapi.co/api/v2/berry/'
+load_dotenv()
 
 def get_berries_number(verbose = False):
     """Cuento cuantas berries hay"""
 
     # Pido la respuesta de la API externa
-    response            = requests.get( POKEAPE__MAIN_URL )
+    response            = requests.get( os.environ["POKEAPI_MAIN_URL"] )
 
     # Un codigo 200 indica que se obtuvieron datos satisfactoriamente
     try:
@@ -33,7 +35,7 @@ def get_berries_data(nberries, verbose = False):
     berry_grow_times = []
     try:
         for k in range(nberries+1):
-            response = requests.get( POKEAPE__MAIN_URL + str(k) )
+            response = requests.get( os.environ["POKEAPI_MAIN_URL"] + str(k) )
             
             if response.status_code == 200:
                 payload             = response.json()

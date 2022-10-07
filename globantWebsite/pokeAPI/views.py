@@ -1,6 +1,10 @@
 from django.shortcuts import render, HttpResponse
 from .pokeAPI_scripts.pokeAPI_scripts import *
 import numpy as np
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 # Create your views here.
 def index(request):
@@ -8,6 +12,9 @@ def index(request):
     # return HttpResponse("""
     # <h1>Index page</h1>
     # """)
+
+    #load_dotenv()
+    #print(os.environ["USER"])
 
     # Render response
     return render(request, 'index.html', {
