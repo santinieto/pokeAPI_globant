@@ -1,1 +1,1 @@
-web: gunicorn globantWebsite.wsgi --log-file-
+web: gunicorn globantWebsite.wsgi --log-file -
