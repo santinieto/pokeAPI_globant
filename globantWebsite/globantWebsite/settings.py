@@ -92,6 +92,7 @@ DATABASES = {
         default = config('DATABASE_URL') # Default environment variable name
     )
 }
+DATABASES['default'] = dj_database_url.config(default='postgres://...')
 
 
 # Password validation
@@ -138,3 +139,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # To show static files
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+import django_heroku
+django_heroku.settings(locals())
