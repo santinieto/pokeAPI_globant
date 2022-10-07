@@ -74,15 +74,7 @@ $ source ../lin-env/bin/activate (on Linux)
 
 and the command prompt should now have the subscript "(lin-env)" or "(win-env)" according to the Operative System.
 
-3. (*) Check the Python libraries you have, as it is the first time you will see a few packages:
-
-- $ pip list
-- Package    Version
-- ---------- -------
-- pip        22.0.2
-- setuptools 59.6.0
-
-4. (*) Install the required packages for the project:
+3. (*) Install the required packages for the project:
 
 $ python -m pip install -r requirements.txt
 
